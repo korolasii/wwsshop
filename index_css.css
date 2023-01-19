@@ -1,0 +1,47 @@
+*{
+  margin: 0;
+  padding: 0;
+  }
+
+body {
+      background-color: #131517;
+      }
+.box {
+      margin: 50px auto;
+      text-algin: center;
+      background-color: #1f2429;
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      width: 400px;
+      padding: 20px;
+      border-radius: 30px;
+      }
+
+#way{
+     width: 350px ;
+     position: relative;
+     left: 0px;
+     }
+
+#Emeil,#password,#way,#btn,#reload, .content{
+                            margin: 10px;
+                            padding: 20px;
+                            width: 350px;
+                            background-color: #252e38;
+                            border-radius: 30px;
+                            color: #fff;
+                            outline: 0;
+                            border: 0;
+                            border-button: 2px solid #2484f2;
+                            font-size: 1.3em
+                            }
+
+#btn,#reload {
+      cursor: pointer;
+      width: 390px;
+      text-transform: uppercase
+      }
+
+#btn:hover,#reload:hover {
+            color: #fff;
+            background-color: #2285f5
+            }

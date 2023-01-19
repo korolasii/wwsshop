@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Отправка писем о получении</title>
+    <link rel="stylesheet" href="index_css.css">
+    <script src="eel.js"></script>
+</head>
+<body>
+    <div class="box">
+        <form action="#">
+            <input type="text" id="Emeil" value="timofei.kropachev@gmail.com"><br>
+            <br>
+            <input type="password" id="password" value="oqtspbctwzowkbfm"><br>
+            <br>
+            <input type="submit" id="reload" value="Обновить базу данных">
+            <br>
+            <input type="submit" id="dolg_btn" value="Отправить долги">
+            <br>
+            <input type="submit" id="btn" value="Отправить"><br>
+        </form>
+        <script>
+            let btn = document.querySelector("#btn");
+            btn.addEventListener("click", sendData);
+            async function sendData(){
+                let emeil = document.querySelector("#Emeil").value;
+                let password = document.querySelector("#password").value;
+                await eel.recv_data(emeil, password);
+                await eel.start_code(emeil, password);
+            }
+            let reload = document.querySelector("#reload");
+            reload.addEventListener("click", reloadData);
+            async function reloadData(){
+                await eel.reload();
+            }
+            let dolg_btn = document.querySelector("#dolg_btn");
+            dolg_btn.addEventListener("click", dolgData);
+            async function dolgData(){
+                let emeil = document.querySelector("#Emeil").value;
+                let password = document.querySelector("#password").value;
+                await eel.dolg_distribution(emeil, password);
+            }
+        </script>
+    </div>
+</body>
+</html>
